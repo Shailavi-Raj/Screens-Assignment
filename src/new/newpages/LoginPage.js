@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import Button from "@material-ui/core/Button";
+import Adminbar from "../Adminbar";
 import "../newpages/Login.css";
 
 function Login() {
@@ -8,6 +9,7 @@ function Login() {
   const handleClick = () => history.push("/adminlogin");
   return (
     <div className="loginpage">
+      <Adminbar />
       <h2> Admin Login </h2> <br />
       <div className="signin">
         <form>
@@ -21,20 +23,23 @@ function Login() {
           </div>
           <div className="form-group-lg">
             <input
-              type="text"
+              type="password"
               className="form-control"
               placeholder=" PASSWORD"
             />
           </div>
           <br />
-          <Button
-            className="btn-primary"
-            variant="contained"
-            color="basic"
-            onClick={handleClick}
-          >
-            <h5> SUBMIT </h5>
-          </Button>
+          <center>
+            {" "}
+            <Button
+              className="btn-primary"
+              variant="contained"
+              color="basic"
+              onClick={handleClick}
+            >
+              <h5> SUBMIT </h5>
+            </Button>
+          </center>
         </form>
       </div>
     </div>

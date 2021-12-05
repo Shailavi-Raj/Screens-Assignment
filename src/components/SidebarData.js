@@ -19,7 +19,7 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: "My register",
+    title: "Register",
     path: "/register",
     icon: <mdIcons.MdDashboard />,
     cName: "nav-text",
@@ -27,6 +27,12 @@ export const SidebarData = [
   {
     title: "Schedule",
     path: "/schedule",
+    icon: <BsIcons.BsFillQuestionSquareFill />,
+    cName: "nav-text",
+  },
+  {
+    title: "FeedBack",
+    path: "/feed",
     icon: <BsIcons.BsFillQuestionSquareFill />,
     cName: "nav-text",
   },

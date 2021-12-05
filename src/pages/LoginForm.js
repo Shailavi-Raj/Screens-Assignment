@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
+import "../pages/Signup.css";
 
 const LoginForm = ({ onSubmit }) => {
   const [email, setEmail] = useState("");

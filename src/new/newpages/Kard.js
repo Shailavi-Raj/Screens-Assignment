@@ -22,7 +22,7 @@ function kard() {
               <p></p>
             </div>
             <div className="btn">
-              <Link to="/report" activeStyle>
+              <Link to="/" activeStyle>
                 {" "}
                 {/*Link to the table page */}
                 <Button variant="primary" size="lg">
@@ -64,7 +64,7 @@ function kard() {
               <p></p>
             </div>
             <div className="btn">
-              <Link to="/report" activeStyle>
+              <Link to="/centers" activeStyle>
                 <Button variant="primary" size="lg">
                   Click to view report{" "}
                 </Button>

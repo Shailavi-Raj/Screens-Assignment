@@ -31,7 +31,7 @@ function Appbar() {
   const loginClick = () => history.push("/login");
 
   return (
-    <div className="appbar">
+    <div className="aboutbar">
       <div className={classes.root}>
         <AppBar
           position="sticky"

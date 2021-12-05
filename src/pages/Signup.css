@@ -5,8 +5,12 @@
 
 .form-group-lg {
   margin-top: 10px;
-  margin-right: 250px;
+  margin-right: 300px;
+  margin-left: 300px;
 }
 .button {
   margin-right: 600px;
+}
+.login {
+  text-align: center;
 }

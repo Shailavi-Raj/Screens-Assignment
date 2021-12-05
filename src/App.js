@@ -18,6 +18,9 @@ import Vaccine from "./new/newpages/Vaccine";
 import UserDetails from "./new/newpages/UserDetails";
 import LoginForm from "./pages/LoginForm";
 import LoginPage from "./new/newpages/LoginPage";
+import Addvaccine from "./new/newpages/Addvaccine";
+import Addcenter from "./new/newpages/Addcenter";
+import Feed from "./pages/Feed";
 
 function App() {
   return (
@@ -42,6 +45,9 @@ function App() {
         <Route exact path="/userdetails" component={UserDetails} />
         <Route exact path="/loginForm" component={LoginForm} />
         <Route exact path="/loginpage" component={LoginPage} />
+        <Route exact path="/addvaccine" component={Addvaccine} />
+        <Route exact path="/addcenter" component={Addcenter} />
+        <Route exact path="/feed" component={Feed} />
       </Switch>
     </div>
   );
