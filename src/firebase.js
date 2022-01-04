@@ -1,14 +1,12 @@
 import firebase from "firebase/app";
-
 const firebaseConfig = {
-  apiKey: "AIzaSyAF_oAs_BY1gGjG70igpkS2ZK0pX7sc86o",
-  authDomain: "vaccine-27ca9.firebaseapp.com",
-  projectId: "vaccine-27ca9",
-  storageBucket: "vaccine-27ca9.appspot.com",
-  messagingSenderId: "275034957321",
-  appId: "1:275034957321:web:443c14d5f6aa625e2dfad8",
+  apiKey: "AIzaSyAf_DyT02SOncKqZXWTxl-NwQ9D9K0lYB4",
+  authDomain: "evaccine-fb8ed.firebaseapp.com",
+  projectId: "evaccine-fb8ed",
+  storageBucket: "evaccine-fb8ed.appspot.com",
+  messagingSenderId: "841805049091",
+  appId: "1:841805049091:web:9b986eedc67d0e79d58d36",
 };
 firebase.initializeApp(firebaseConfig);
-let auth = firebase.auth();
 
-export { firebase, auth };
+export default firebase;

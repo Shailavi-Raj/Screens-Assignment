@@ -3,17 +3,18 @@ import { useHistory } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { Button, Row, Col } from "react-bootstrap";
-import Adminbar from "../Adminbar";
+import Appbar from "../components/Appbar";
 
-const Addvaccine = () => {
+const Book = () => {
   const history = useHistory();
-  const handleClick = () => history.push("/vaccine");
+  const handleClick = () => history.push("/book");
   const [nullData, setNullData] = useState(true);
   const [userData, setUserData] = useState({
-    vaccine: "",
-    nextDose: "",
+    vname: "",
     ageGroup: "",
-    availablity: " ",
+    cname: "",
+    date: " ",
+    pincode: " ",
   });
   let name, value;
   const postUserData = (event) => {
@@ -24,28 +25,28 @@ const Addvaccine = () => {
     }
     setUserData({ ...userData, [name]: value });
   };
-
   const submitData = async (e) => {
     e.preventDefault();
-    const { vaccine, nextDose, ageGroup, availablity } = userData;
+    const { vname, ageGroup, cname, date, pincode } = userData;
     if (!nullData) {
       alert("Please Fill The Data");
     } else {
       await fetch(
-        "https://evaccine-fb8ed-default-rtdb.asia-southeast1.firebasedatabase.app/addVaccine.json",
+        "https://evaccine-fb8ed-default-rtdb.asia-southeast1.firebasedatabase.app/bookedVaccine.json",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            vaccine,
-            nextDose,
+            vname,
             ageGroup,
-            availablity,
+            cname,
+            date,
+            pincode,
           }),
         }
-      ).then(() => alert("Data Stored"));
+      ).then(() => alert("The Vaccine is booked for you"));
     }
 
     // if (res) {
@@ -72,13 +73,12 @@ const Addvaccine = () => {
 
     setValidated(true);
   };
-
   return (
-    <div className="addvaccine">
-      <Adminbar />
+    <div className="book">
+      <Appbar />
       <Modal.Dialog>
         <Modal.Header>
-          <Modal.Title>Vaccine</Modal.Title>
+          <Modal.Title>Book Vaccine</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form
@@ -93,7 +93,7 @@ const Addvaccine = () => {
               controlId="validationCustom01"
             >
               <Form.Label column sm={2}>
-                Vaccine
+                Vaccine Name
               </Form.Label>
               <Col sm={10}>
                 <Form.Control
@@ -101,27 +101,7 @@ const Addvaccine = () => {
                   type="text"
                   placeholder="mention vaccine name here"
                   name="vaccine"
-                  value={userData.vaccine}
-                  onChange={postUserData}
-                />
-              </Col>
-            </Form.Group>
-
-            <Form.Group
-              as={Row}
-              className="mb-3"
-              controlId="validationCustom02"
-            >
-              <Form.Label column sm={3}>
-                Next dose duration
-              </Form.Label>
-              <Col sm={10}>
-                <Form.Control
-                  required
-                  type="text"
-                  placeholder="mention duration  here"
-                  name="nextDose"
-                  value={userData.nextDose}
+                  value={userData.vname}
                   onChange={postUserData}
                 />
               </Col>
@@ -154,24 +134,59 @@ const Addvaccine = () => {
             <Form.Group
               as={Row}
               className="mb-3"
-              controlId="validationCustom04"
+              controlId="validationCustom02"
             >
-              <Form.Label column sm={2}>
-                Availablity
+              <Form.Label column sm={3}>
+                Choose Center
               </Form.Label>
               <Col sm={10}>
                 <Form.Control
-                  as="select"
                   required
-                  name="availablity"
-                  value={userData.availablity}
+                  type="text"
+                  placeholder="choose center for yourself"
+                  name="nextDose"
+                  value={userData.cname}
                   onChange={postUserData}
-                >
-                  <option>Open this select menu</option>
-                  <option value="One">One</option>
-                  <option value="Two">Two</option>
-                  <option value="Three">Three</option>
-                </Form.Control>
+                />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              as={Row}
+              className="mb-3"
+              controlId="validationCustom02"
+            >
+              <Form.Label column sm={3}>
+                Date
+              </Form.Label>
+              <Col sm={10}>
+                <Form.Control
+                  required
+                  type="text"
+                  placeholder="choose the date for vaccination"
+                  name="date"
+                  value={userData.date}
+                  onChange={postUserData}
+                />
+              </Col>
+            </Form.Group>
+
+            <Form.Group
+              as={Row}
+              className="mb-3"
+              controlId="validationCustom02"
+            >
+              <Form.Label column sm={3}>
+                Pincode
+              </Form.Label>
+              <Col sm={10}>
+                <Form.Control
+                  required
+                  type="text"
+                  placeholder="mention duration  here"
+                  name="nextDose"
+                  value={userData.pincode}
+                  onChange={postUserData}
+                />
               </Col>
             </Form.Group>
           </Form>
@@ -181,11 +196,12 @@ const Addvaccine = () => {
             Back
           </Button>
           <Button type="submit" onClick={submitData}>
-            Add Vaccine
+            Done
           </Button>
         </Modal.Footer>
       </Modal.Dialog>
     </div>
   );
 };
-export default Addvaccine;
+
+export default Book;

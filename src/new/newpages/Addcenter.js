@@ -26,7 +26,7 @@ const Addvaccine = () => {
     e.preventDefault();
     const { cname, ageGroup, pincode } = userData;
     const res = await fetch(
-      "https://vaccine-27ca9-default-rtdb.asia-southeast1.firebasedatabase.app/addCenter.json",
+      "https://evaccine-fb8ed-default-rtdb.asia-southeast1.firebasedatabase.app/addCenter.json",
       {
         method: "POST",
         headers: {

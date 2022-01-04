@@ -28,7 +28,7 @@ function Register() {
       alert("Please Fill The Data");
     } else {
       await fetch(
-        "https://vaccine-27ca9-default-rtdb.asia-southeast1.firebasedatabase.app/register.json",
+        "https://evaccine-fb8ed-default-rtdb.asia-southeast1.firebasedatabase.app/register.json",
         {
           method: "POST",
           headers: {

@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import Button from "@material-ui/core/Button";
+import "bootstrap/dist/css/bootstrap.css";
 import Adminbar from "../Adminbar";
 import "../newpages/Login.css";
 

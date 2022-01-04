@@ -18,8 +18,8 @@ function Faq() {
   };
   return (
     <div className="Faq">
-      <AboutSide />
       <Aboutbar />
+      <AboutSide />
       <Box
         sx={{
           bgcolor: "#15b2b8",

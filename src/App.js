@@ -16,7 +16,7 @@ import Centers from "./new/newpages/Centers";
 import Report from "./new/newpages/Report";
 import Vaccine from "./new/newpages/Vaccine";
 import UserDetails from "./new/newpages/UserDetails";
-import LoginForm from "./pages/LoginForm";
+import Book from "./pages/Book";
 import LoginPage from "./new/newpages/LoginPage";
 import Addvaccine from "./new/newpages/Addvaccine";
 import Addcenter from "./new/newpages/Addcenter";
@@ -43,11 +43,11 @@ function App() {
         <Route exact path="/report" component={Report} />
         <Route exact path="/vaccine" component={Vaccine} />
         <Route exact path="/userdetails" component={UserDetails} />
-        <Route exact path="/loginForm" component={LoginForm} />
         <Route exact path="/loginpage" component={LoginPage} />
         <Route exact path="/addvaccine" component={Addvaccine} />
         <Route exact path="/addcenter" component={Addcenter} />
         <Route exact path="/feed" component={Feed} />
+        <Route exact path="/book" component={Book} />
       </Switch>
     </div>
   );

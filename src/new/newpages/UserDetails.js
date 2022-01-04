@@ -2,36 +2,40 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Adminbar from "../Adminbar";
 import AdminSide from "../AdminSide";
+import "firebase/database";
 //Simport "../Admin.css";
-// import { firebase } from "../../firebase";
+
+import firebase from "../../firebase";
+const db = firebase.database().ref("/signUp");
 function UserDetails() {
   const [users, setUser] = useState([]);
 
   useEffect(() => {
     loadUsers();
   }, []);
-
+  function delete1(key) {
+    console.log("hello", key);
+    return db.child(key).remove();
+  }
   const loadUsers = async () => {
     const result = await axios.get(
-      "https://vaccine-27ca9-default-rtdb.asia-southeast1.firebasedatabase.app/signUp.json"
+      "https://evaccine-fb8ed-default-rtdb.asia-southeast1.firebasedatabase.app/signUp.json"
     );
     console.log(result, "this is result", typeof result);
     setUser(result.data);
   };
   const deleteUser = async (id) => {
-    await axios.delete(
-      `https://vaccine-27ca9-default-rtdb.asia-southeast1.firebasedatabase.app/signUp/${id}`,
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    delete1(id)
+      .then(() => {
+        console.log("deleted");
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   };
   console.log(users, "this is user", typeof users);
   const arr = Object.values(users);
-  console.log(arr, "this is arrray i think so");
+  console.log(arr, "this is arrray");
   return (
     <div className="userdetails">
       <Adminbar />
@@ -57,7 +61,7 @@ function UserDetails() {
                 <td>
                   <button
                     color="inherit"
-                    onClick={() => deleteUser(userData.mobile)}
+                    onClick={() => deleteUser("MpU86hsOs6qHK_4V2MX")}
                   >
                     delete
                   </button>
