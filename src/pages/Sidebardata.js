@@ -1,38 +1,47 @@
 import React from "react";
-import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
 import * as BsIcons from "react-icons/bs";
 import * as mdIcons from "react-icons/md";
-import "../components/MenuOption.css";
 
 export const SidebarData = [
   {
-    title: "Home",
-    path: "/home",
-    icon: <AiIcons.AiFillHome />,
+    title: "Dashboard Kit",
+    path: "",
+
     cName: "nav-text",
   },
   {
-    title: " My Profile",
-    path: "/profile",
+    title: " Tickets",
+    path: "/tickets",
     icon: <IoIcons.IoIosPaper />,
     cName: "nav-text",
   },
   {
-    title: "Register",
-    path: "/register",
+    title: "Ideas",
     icon: <mdIcons.MdDashboard />,
     cName: "nav-text",
   },
   {
-    title: "Schedule",
-    path: "/schedule",
+    title: "Contacts",
+
     icon: <BsIcons.BsFillQuestionSquareFill />,
     cName: "nav-text",
   },
   {
-    title: "FeedBack",
-    path: "/feed",
+    title: "Agent",
+
+    icon: <BsIcons.BsFillQuestionSquareFill />,
+    cName: "nav-text",
+  },
+  {
+    title: "Articles",
+    path: "",
+    icon: <BsIcons.BsFillQuestionSquareFill />,
+    cName: "nav-text",
+  },
+  {
+    title: "Settings",
+
     icon: <BsIcons.BsFillQuestionSquareFill />,
     cName: "nav-text",
   },

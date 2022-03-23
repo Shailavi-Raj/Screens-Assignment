@@ -1,11 +1,11 @@
 import React from "react";
-import "../components/MenuOption.css";
-import AdminMenu from "../new/AdminOption";
+
+import SimpleMenu from "./SidebarOption";
 
 function Sidebar() {
   return (
     <div className="sidebar">
-      <AdminMenu />
+      <SimpleMenu />
     </div>
   );
 }
